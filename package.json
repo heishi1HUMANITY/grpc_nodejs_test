@@ -1,0 +1,22 @@
+{
+  "name": "grpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "genRpc": "grpc_tools_node_protoc --plugin=./node_modules/.bin/protoc-gen-ts --js_out=import_style=commonjs,binary:gen --grpc_out=grpc_js:gen --ts_out=grpc_js:gen -I ./src/proto ./src/proto/*.proto",
+    "server": "node ./src/server/server.js",
+    "clientTest": "node ./src/client/client test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@grpc/grpc-js": "^1.3.2",
+    "google-protobuf": "^3.17.0",
+    "grpc_tools_node_protoc_ts": "^5.2.2",
+    "grpc-tools": "^1.11.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
